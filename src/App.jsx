@@ -576,16 +576,19 @@ function App() {
     return (
         <BrowserRouter>
             <Navbar />
-            <Routes>
-                <Route path="/" element={<Home/>}/>
-                <Route path="/news" element={<News news={data} />}>
-                    <Route index element={<NewsList news={data} />}/>
-                    <Route path=":id" element={<NewsItem news={data} />}/>
-                </Route>
-                <Route path="/about" element={<About/>}/>
-                <Route path="/contact" element={<Contact/>}/>
-                <Route path="*" element={<NoMatch/>}/>
-            </Routes>
+            <main>
+                <Routes>
+                    <Route path="/" element={<Home/>}/>
+                    <Route path="/news" element={<News news={data} />}>
+                        <Route index element={<NewsList news={data} />}/>
+                        <Route path=":id" element={<NewsItem news={data} />}/>
+                    </Route>
+                    <Route path="/about" element={<About/>}/>
+                    <Route path="/contact" element={<Contact/>}/>
+                    <Route path="*" element={<NoMatch/>}/>
+                </Routes>
+            </main>
+
         </BrowserRouter>)
 }
 
